@@ -6,7 +6,9 @@ Gradebook = ["AP Calculus",
               "Honors French 5",
               "Financial Literacy"]
 
-global Gradebook
+print Gradebook
+
+
 
 
 
