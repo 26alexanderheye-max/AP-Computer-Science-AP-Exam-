@@ -19,11 +19,11 @@ def Decision1():
         print("You found a flare gun and a water bottle.")
         print("You decide to take the the water bottle, do you also want to take the flare gun?")
         decision2= input()
-        if decision2 == "Yes":
+        if decision2 == "yes":
             backpack.append("flare gun")
             backpack.append("water bottle")
             print("You decided to take both the flare gun and the water bottle.")
-        elif decision2 == "No":
+        elif decision2 == "no":
             backpack.append("water bottle")
             print("You only took the water bottle.")
             print("Now you start your swim to shore.")
@@ -32,7 +32,7 @@ def Decision1():
         print("You decided to swim to shore.")
         
 Decision1()
-
+print (backpack)
 
 def Decision2():
     print("You are extremely thirsty after the swim to shore, do you want to drink then water in your water bottle?")
@@ -44,11 +44,13 @@ def Decision2():
         print("Game Over. Type restart to play again.")
         answer = input() 
         if answer == "restart":
+            backpack.clear()
             introduction()
             Decision1() 
             Decision2()
 
 Decision2 ()
+print (backpack)
 
 def Decision3 ():
     print("You need to find food quickly, would you like to stay at the shore, and look food that washed up" \
@@ -68,10 +70,11 @@ def Decision3 ():
 
         print("Would you now like to go to the jungle")
         if decision4 == "Yes":
-                Jungle ()
+                Decision4 ()
         elif decision4 == "no":
             print ("You made camp on the shore and slept and now you explore the jungle") 
 Decision3 ()
+print (backpack)
 
 def Decision4 ():
     print("You walk through the jungle and find a hidden Mayan temple")
@@ -82,7 +85,35 @@ def Decision4 ():
         print ("You chose to climb to the top of the temple")
         print ("When you climb to the top you see a helicopter flying in the distance looking for surviors of the nearby crash")
         print ("Due to your elevation shooting a flare gun from this height would get their attention.")
-    elif
+        if "flare gun" in backpack:
+            print("Do you want to shoot the flare gun")
+            flaregundecision= input ()   
+            if flaregundecision == "yes":
+                print("You shot the flare gun the helicopter saw and you are saved")
+            elif flaregundecision == "no":
+                print("The helicopter left and that was your only chance to be saved you died.")
+                print("Game Over. Type restart to play again.")
+                answer = input() 
+                if answer == "restart":
+                    backpack.clear()
+                    introduction()
+                    Decision1() 
+                    Decision2()
+                    Decision3()
+                    Decision4()
+        if "flare gun" not in backpack:
+            print("You had no way of getting the helicopter's attention and it left, that was the only chance to be saved you died.")
+            print("Game Over. Type restart to play again.")
+            answer = input() 
+            if answer == "restart":
+                backpack.clear()
+                introduction()
+                Decision1() 
+                Decision2()
+                Decision3()
+                Decision4()
+                      
+    elif Mayantempledecision == "enter":
         print("You walk down a narrow passageway and trip a wire causing the floor to open and you to fall down a hole to your death")
         print("Game Over. Type restart to play again.")
         answer = input() 
@@ -91,7 +122,8 @@ def Decision4 ():
             Decision2 ()
             Decision3 ()
             Decision4 ()
-
+Decision4 ()
+print (backpack)
 
 
 
